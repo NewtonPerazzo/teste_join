@@ -1,0 +1,34 @@
+{% load static %}
+<html lang="en" xmlns:p="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    {% block home %}
+        {% for alvo in alvos %}
+            <h1>{{ alvo.nome }}</h1>
+            { {{ alvo.latitude }} , {{ alvo.longitude }} }
+        {% endfor %}
+        <div id="mapa">
+        <a href="mapa">
+        <button id="mostrar-mapa">Mapa</button>
+        </a>
+        </div>
+        <p>
+        <a href="add_alvo"><button>Adicionar Alvo</button></a>
+        </p>
+    {% endblock %}
+</body>
+
+<script>
+   $(document).ready(function(){
+       $("#mostrar-mapa").click(function(){
+
+           $(function(){
+               $("#mapa").load("mapa.html");
+           });
+       })
+   });
+</script>
+</html>

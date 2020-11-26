@@ -1,0 +1,43 @@
+Questão 1:
+
+ create table cargos(
+    nome varchar(200),
+    primary key (nome)
+);
+
+create table pessoas(
+	id int,
+    nome varchar(200),
+    cargo varchar(200),
+    admissao date,
+    foreign key(cargo) references cargos(nome)
+);
+
+ LETRA A:
+
+ select pessoas.nome, pessoas.cargo from pessoas join cargos on cargos.nome = pessoas.cargo order by pessoas.admissao;
+
+ LETRA B:
+
+ select pessoas.nome, min(pessoas.admissao) from pessoas;
+
+ LETRA C:
+
+ select cargo, count(*) from pessoas group by cargo;
+
+Questão 2:
+
+ [ 5 - Function ] var e = function(){};
+ [ 1 - Array ] var b = [];
+ [ 2 - String ] var c = '11';
+ [ 3 - Object ] var a = {};
+ [ 4 - Number ] var d = 5;
+ [ 6 - Instância/Classe ] var f = new function(){};
+
+Questão 3:
+ Fulano
+
+Questão 5:
+ Layout C
+
+

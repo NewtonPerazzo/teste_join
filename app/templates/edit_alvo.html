@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Editar Alvo</title>
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+</head>
+<body>
+<div class="container-fluid">
+    <h1> Editando alvo {{ alvo.nome }}</h1>
+    <div>
+        <ul>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <p><input type="submit" class="btn btn-success" value="Salvar edição"></p>
+            </form>
+            <p><a href="delete/{{ alvo.id }}"><button class="botao">Deletar</button></a></p>
+            <p><a href="/"><button class="botao">Voltar</button></a></p>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

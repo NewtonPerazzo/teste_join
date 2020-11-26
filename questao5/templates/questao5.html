@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 5</title>
+    <style>
+        h1 {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="/"><button class="botao">Voltar</button></a></p>
+    <h1>Relacionamento 1 - 1</h1>
+    <p>Endereço - Pedido</p>
+    {% for cliente in clientes %}
+         <li>
+         {{ cliente.nome }} - {{ cliente.endereco }}
+         </li>
+    {% endfor %}
+    <h1>Relacionamento 1 - N e N - N</h1>
+    <p>Relacionamento 1 - N: Cliente - Pedido</p>
+    <p>Relacionamento N - N: Pedido - Produto</p>
+    {% for cliente in pedido %}
+        <p>{{ cliente.cliente }} - ID: {{ cliente.id }}</p>
+        <p>ID: {{ cliente.id }} - {{ cliente.produtos.all }}</p>
+    {% endfor %}
+</body>
+</html>

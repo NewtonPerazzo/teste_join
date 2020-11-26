@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Editar Alvo {% endblock%}</title>
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+</head>
+<body>
+    <div class="container-fluid">
+        <h1>Alvos inseridos no mapa:</h1>
+        <p><a href="/"><button class="botao">Voltar</button></a></p>
+        <p><a href="questao1"><button class="botao">Ver Questão 1</button></a></p>
+        <p><a href="questao4"><button class="botao">Ver Questão 4</button></a></p>
+        <p><a href="questao5"><button class="botao">Ver Questão 5</button></a></p>
+        <ul>
+            {% for alvo in lista %}
+                <a href="edit/{{ alvo.id }}" style="text-decoration: none; color: #535151"><h1> {{ alvo.nome }}</h1></a>
+                <ul>
+                    <p>Latitude: {{ alvo.latitude }}</p>
+                    <p>Longitude: {{ alvo.longitude }}</p>
+                    <p>Data de Expiração: {{ alvo.dt_expiracao }}</p>
+                </ul>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

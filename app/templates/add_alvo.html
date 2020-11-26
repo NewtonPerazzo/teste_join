@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Alvo</title>
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+</head>
+<body>
+<div class="container-fluid">
+    <h1>Adicionando Alvo</h1>
+    <ul>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-success" value="Adicionar alvo">
+        </form>
+        <p><a href="/"><button class="botao">Voltar</button></a></p>
+    </ul>
+</div>
+</body>
+</html>

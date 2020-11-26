@@ -1,0 +1,19 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 4</title>
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+</head>
+<body>
+    <p><a href="/"><button class="botao">Voltar</button></a></p>
+    <button type="button" class="box">Ocultar o conteúdo</button>
+    <div id="box">Hello, world!</div>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script>
+    $(document).click(function() {
+        $("#box").hide();
+    });
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questão 1</title>
+    <style>
+        h1 {
+            font-size: 18px;
+        }
+        h2 {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="/"><button class="botao">Voltar</button></a></p>
+    <h1>A. Retorne por ordem crescente de admissão o nome dos funcionários e seus respectivos cargos na empresa</h1>
+    {% for pessoa in a %}
+         <li>
+         {{ pessoa.nome }} - {{ pessoa.cargo }}
+         </li>
+    {% endfor %}
+    <h1> B. Considerando que a tabela Pessoas possua mais registros que o ilustrado acima, retorne o nome do funcionário e o nome do cargo do funcionário mais antigo na empresa. </h1>
+    {{ mais_antigo.nome }} - {{ mais_antigo.cargo }}
+    <h1> C. Retorne todos os nomes dos cargos com a quantidade de funcionários em cada um deles. </h1>
+    {% for cargo in cargos %}
+        <li>
+            {{ cargo }}
+        </li>
+    {% endfor %}
+    <h2>A quantidade de pessoas por cargo é, respectivamente:</h2>
+    {{ qtd }}
+
+
+</body>
+</html>
